@@ -38,5 +38,12 @@ public class ClassLoaderTest {
 
         System.out.println(obj.getClass());
         System.out.println(obj instanceof org.fenixsoft.jvm.chapter7.ClassLoaderTest);
+
+        ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();
+        while (classLoader != null){
+            System.err.println(classLoader);
+            classLoader = classLoader.getParent();
+        }
+
     }
 }
